@@ -54,7 +54,7 @@ div[class*="max-w-[45%]"] {
   #root>div>div.flex.h-screen {
     flex-direction: column-reverse !important;
     height: 100vh !important;
-    overflow: hidden !important;
+    overflow-x: hidden !important;
   }
 
   /* 2. LeftBar: transform from left sidebar into a bottom navigation bar */
@@ -384,5 +384,5 @@ div[class*="max-w-[45%]"] {
     background: #232630 !important;
   }
 
-  
+
 }
