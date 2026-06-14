@@ -45,10 +45,12 @@ const Home = () => {
 
   return (
     <div className="h-full flex flex-col">
-        <Search/>
+        <div className='py-2 flex justify-center'>
+            <Search />
+        </div>
         <div className="flex-1 overflow-y-auto hide-scrollbar flex flex-col items-center gap-20 py-5">
             {
-                posts.map((post, index)=>(
+                posts.map((post, index) => (
                     <Feed user={user} index={post._id} key={post._id} post={post} />
                 ))
             }

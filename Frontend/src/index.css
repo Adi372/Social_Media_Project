@@ -54,22 +54,30 @@ div[class*="max-w-[45%]"] {
   #root>div>div.flex.h-screen {
     flex-direction: column-reverse !important;
     height: 100vh !important;
-    overflow-x: hidden !important;
+    overflow: hidden !important;
   }
 
   /* 2. LeftBar: transform from left sidebar into a bottom navigation bar */
   #root>div>div.flex.h-screen>div[class*="w-[100px]"] {
-    width: 100vw !important;
-    height: 60px !important;
-    min-height: 60px !important;
-    flex-direction: row !important;
-    border-right: none !important;
-    border-top: 2px solid #373A43 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    justify-content: space-around !important;
-    align-items: center !important;
-    gap: 0 !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+
+      width: 100vw !important;
+      height: 60px !important;
+      min-height: 60px !important;
+
+      z-index: 9999 !important;
+      background: #232630 !important;
+
+      flex-direction: row !important;
+      border-right: none !important;
+      border-top: 2px solid #373A43 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      justify-content: space-around !important;
+      align-items: center !important;
+      gap: 0 !important;
   }
 
   /* Hide the Logo link inside LeftBar on mobile */
@@ -120,10 +128,12 @@ div[class*="max-w-[45%]"] {
 
   /* 4. Routing Page Wrapper: limit viewable area to exclude the bottom nav */
   #root>div>div.flex.h-screen>div.flex-1 {
-    height: calc(100vh - 60px) !important;
-    width: 100vw !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+      height: 100vh !important;
+      width: 100vw !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+
+      padding-bottom: 60px !important;
   }
 
   /* When there are no sidebars/bottom navigation (Login/Register/Interests), occupy full screen */
@@ -370,19 +380,4 @@ div[class*="max-w-[45%]"] {
   textarea.h-100 {
     height: 180px !important;
   }
-
-  .h-screen.items-center.py-5.overflow-y-auto.hide-scrollbar.flex.flex-col.gap-20 {
-    overflow-y: visible !important;
-    height: auto !important;
-    min-height: 100% !important;
-  }
-
-  .sticky {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 999 !important;
-    background: #232630 !important;
-  }
-
-
 }
