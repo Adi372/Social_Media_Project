@@ -1,12 +1,14 @@
 # A Social Media Platform with AI Chat
 
+<img width="1535" height="1024" alt="Image" src="https://github.com/user-attachments/assets/da0e935f-8a13-4deb-966d-4b6134db2bec" />
+
 > 🚧 **Project Status:** This project is currently under active development. Features, APIs, UI components, and documentation may change as development continues.
 
 > 🎬 **Teaser:**
 
 https://github.com/user-attachments/assets/74e8d908-ef62-4754-9f76-4fa96c71de71
 
-> **Live Link:** Coming Soon
+> [**Live Link**](https://void-tup9.onrender.com/)
 
 ## Overview
 A full-stack social media application featuring user authentication, social posting, friendships, notifications, real-time messaging, and an AI-powered chat assistant with long-term memory using embeddings and vector search.
