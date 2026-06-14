@@ -4,9 +4,11 @@ import Search from './Search'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
+    const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
 
@@ -22,6 +24,9 @@ const Home = () => {
       .catch((err)=>{
         //   console.log(err);
           setUser(null);
+          if (err.response?.status === 401) {
+            navigate('/login');
+        }
       });
   }, []);
 
