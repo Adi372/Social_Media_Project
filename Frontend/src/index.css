@@ -376,4 +376,13 @@ div[class*="max-w-[45%]"] {
     height: auto !important;
     min-height: 100% !important;
   }
+
+  .sticky {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    background: #232630 !important;
+  }
+
+  
 }
