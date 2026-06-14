@@ -370,4 +370,10 @@ div[class*="max-w-[45%]"] {
   textarea.h-100 {
     height: 180px !important;
   }
+
+  .h-screen.items-center.py-5.overflow-y-auto.hide-scrollbar.flex.flex-col.gap-20 {
+    overflow-y: visible !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
 }
