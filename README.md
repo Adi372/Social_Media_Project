@@ -6,13 +6,15 @@
 
 [**Live Link**](https://void-tup9.onrender.com/)
 
-Since the platform still has a few bugs and some features may run slowly, I'm sharing this quick tutorial to help you navigate these issues and get the best experience possible
+Since the platform still has a few bugs and some features may run slowly, so I'm sharing this quick tutorial to help you navigate these issues and get the best experience possible
 
 **For Desktop Users:**
 
+https://github.com/user-attachments/assets/8ae2c3dc-577e-4b43-a9a9-93ec3d602ae9
 
 **For Mobile Users:**
 
+https://github.com/user-attachments/assets/c400e7c7-dd71-419d-ba60-aa8fe15ac81a
 
 ## Overview
 A full-stack social media application featuring user authentication, social posting, friendships, notifications, real-time messaging, and an AI-powered chat assistant with long-term memory using embeddings and vector search.
