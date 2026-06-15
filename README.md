@@ -4,14 +4,14 @@
 
 > 🚧 **Project Status:** This project is currently under active development. Features, APIs, UI components, and documentation may change as development continues.
 
-> [**Live Link**](https://void-tup9.onrender.com/)
+[**Live Link**](https://void-tup9.onrender.com/)
 
-> Since the platform still has a few bugs and some features may run slowly, I'm sharing this quick tutorial to help you navigate these issues and get the best experience possible
+Since the platform still has a few bugs and some features may run slowly, I'm sharing this quick tutorial to help you navigate these issues and get the best experience possible
 
-> **For Desktop Users:**
+**For Desktop Users:**
 
 
-> **For Mobile Users:**
+**For Mobile Users:**
 
 
 ## Overview
