@@ -4,11 +4,17 @@
 
 > 🚧 **Project Status:** This project is currently under active development. Features, APIs, UI components, and documentation may change as development continues.
 
-> 🎬 **Teaser:**
-
-https://github.com/user-attachments/assets/74e8d908-ef62-4754-9f76-4fa96c71de71
-
 > [**Live Link**](https://void-tup9.onrender.com/)
+
+> Since the platform still has a few bugs and some features may run slowly, I'm sharing this quick tutorial to help you navigate these issues and get the best experience possible
+
+> **For Desktop Users:**
+
+https://github.com/user-attachments/assets/cd2a8257-6f08-4641-8b20-26fee2ed4229
+
+> **For Mobile Users:**
+
+https://github.com/user-attachments/assets/013b7e04-0b98-4982-9e81-5f60a28ef60f
 
 ## Overview
 A full-stack social media application featuring user authentication, social posting, friendships, notifications, real-time messaging, and an AI-powered chat assistant with long-term memory using embeddings and vector search.
