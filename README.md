@@ -10,11 +10,9 @@
 
 > **For Desktop Users:**
 
-https://github.com/user-attachments/assets/cd2a8257-6f08-4641-8b20-26fee2ed4229
 
 > **For Mobile Users:**
 
-https://github.com/user-attachments/assets/013b7e04-0b98-4982-9e81-5f60a28ef60f
 
 ## Overview
 A full-stack social media application featuring user authentication, social posting, friendships, notifications, real-time messaging, and an AI-powered chat assistant with long-term memory using embeddings and vector search.
