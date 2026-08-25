@@ -21,13 +21,13 @@ import Interests from '../components/Interests'
 import EditProfile from '../components/EditProfile'
 
 const Routing = ({
-  likeNotification, 
-  setLikeNotification, 
-  commentNotification, 
-  setCommentNotification, 
-  friendRequestReceivedNotification, 
-  setFriendRequestReceivedNotification, 
-  friendRequestAcceptedNotification, 
+  likeNotification,
+  setLikeNotification,
+  commentNotification,
+  setCommentNotification,
+  friendRequestReceivedNotification,
+  setFriendRequestReceivedNotification,
+  friendRequestAcceptedNotification,
   setFriendRequestAcceptedNotification,
   newMsg,
   setNewMsg
@@ -38,55 +38,55 @@ const Routing = ({
 
   return (
     <div className='flex h-screen'>
-        {
-          bars && <LeftBar 
-          likeNotification={likeNotification} 
-          setLikeNotification={setLikeNotification} 
-          commentNotification={commentNotification} 
-          setCommentNotification={setCommentNotification} 
-          friendRequestReceivedNotification={friendRequestReceivedNotification} 
-          setFriendRequestReceivedNotification={setFriendRequestReceivedNotification} 
-          friendRequestAcceptedNotification={friendRequestAcceptedNotification} 
+      {
+        bars && <LeftBar
+          likeNotification={likeNotification}
+          setLikeNotification={setLikeNotification}
+          commentNotification={commentNotification}
+          setCommentNotification={setCommentNotification}
+          friendRequestReceivedNotification={friendRequestReceivedNotification}
+          setFriendRequestReceivedNotification={setFriendRequestReceivedNotification}
+          friendRequestAcceptedNotification={friendRequestAcceptedNotification}
           setFriendRequestAcceptedNotification={setFriendRequestAcceptedNotification}
           newMsg={newMsg}
           setNewMsg={setNewMsg}
-          />
-        }
-        <div className='flex-1'>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/register' element={<Register/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/addPost' element={<AddPost/>}/>
-            <Route path='/profile' element={<Profile/>}/>
-            <Route path='/aichat' element={<AIChat/>}/>
-            <Route path='/likedPosts' element={<LikedPosts/>}/>
-            <Route path='/commentedPosts' element={<CommentedPosts/>}/>
-            <Route path='/savedPosts' element={<SavedPosts/>}/>
-            <Route path='/friends' element={<AllFriends/>}/>
-            <Route path='/interests' element={<Interests/>} />
-            <Route path='/EditProfile' element={<EditProfile/>}/>
-            <Route path='/notifications' 
+        />
+      }
+      <div className='flex-1'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/addPost' element={<AddPost />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/aichat' element={<AIChat />} />
+          <Route path='/likedPosts' element={<LikedPosts />} />
+          <Route path='/commentedPosts' element={<CommentedPosts />} />
+          <Route path='/savedPosts' element={<SavedPosts />} />
+          <Route path='/friends' element={<AllFriends />} />
+          <Route path='/interests' element={<Interests />} />
+          <Route path='/EditProfile' element={<EditProfile />} />
+          <Route path='/notifications'
             element=
-            {<Notifications  
-              likeNotification={likeNotification} 
-              setLikeNotification={setLikeNotification} 
-              commentNotification={commentNotification} 
-              setCommentNotification={setCommentNotification} 
-              friendRequestReceivedNotification={friendRequestReceivedNotification} 
-              setFriendRequestReceivedNotification={setFriendRequestReceivedNotification} 
-              friendRequestAcceptedNotification={friendRequestAcceptedNotification} 
+            {<Notifications
+              likeNotification={likeNotification}
+              setLikeNotification={setLikeNotification}
+              commentNotification={commentNotification}
+              setCommentNotification={setCommentNotification}
+              friendRequestReceivedNotification={friendRequestReceivedNotification}
+              setFriendRequestReceivedNotification={setFriendRequestReceivedNotification}
+              friendRequestAcceptedNotification={friendRequestAcceptedNotification}
               setFriendRequestAcceptedNotification={setFriendRequestAcceptedNotification}
-            />}/>
+            />} />
 
-            <Route path='/post/:postId' element={<Post/>}/>
-            <Route path='/userProfile/:userId' element={<UserProfile/>}/>
-            <Route path='/chat' element={<Chats newMsg={newMsg} setNewMsg={setNewMsg} />}>
-              <Route path=':id' element={<ChatWindow/>}/>
-            </Route>
-          </Routes>
-        </div>
-        {bars && <RightBar/>}
+          <Route path='/post/:postId' element={<Post />} />
+          <Route path='/userProfile/:userId' element={<UserProfile />} />
+          <Route path='/chat' element={<Chats newMsg={newMsg} setNewMsg={setNewMsg} />}>
+            <Route path=':id' element={<ChatWindow />} />
+          </Route>
+        </Routes>
+      </div>
+      {bars && <RightBar />}
     </div>
   )
 }

@@ -59,6 +59,7 @@ div[class*="max-w-[45%]"] {
 
   /* 2. LeftBar: transform from left sidebar into a bottom navigation bar */
   #root>div>div.flex.h-screen>div[class*="w-[100px]"] {
+<<<<<<< HEAD
       position: fixed !important;
       bottom: 0 !important;
       left: 0 !important;
@@ -78,6 +79,19 @@ div[class*="max-w-[45%]"] {
       justify-content: space-around !important;
       align-items: center !important;
       gap: 0 !important;
+=======
+    width: 100vw !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    flex-direction: row !important;
+    border-right: none !important;
+    border-top: 2px solid #373A43 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    gap: 0 !important;
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
   }
 
   /* Hide the Logo link inside LeftBar on mobile */
@@ -121,6 +135,10 @@ div[class*="max-w-[45%]"] {
     right: auto !important;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
   /* 3. RightBar: hide suggested accounts sidebar */
   #root>div>div.flex.h-screen>div[class*="w-[300px]"] {
     display: none !important;
@@ -128,12 +146,19 @@ div[class*="max-w-[45%]"] {
 
   /* 4. Routing Page Wrapper: limit viewable area to exclude the bottom nav */
   #root>div>div.flex.h-screen>div.flex-1 {
+<<<<<<< HEAD
       height: 100vh !important;
       width: 100vw !important;
       overflow-y: auto !important;
       overflow-x: hidden !important;
 
       padding-bottom: 60px !important;
+=======
+    height: calc(100vh - 60px) !important;
+    width: 100vw !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
   }
 
   /* When there are no sidebars/bottom navigation (Login/Register/Interests), occupy full screen */
@@ -151,7 +176,11 @@ div[class*="max-w-[45%]"] {
   }
 
   /* Adjust inner login/register card layout for small viewport heights */
+<<<<<<< HEAD
   #root>div>div.flex.h-screen>div.flex-1 .h-screen.flex.justify-center.py-10 > div {
+=======
+  #root>div>div.flex.h-screen>div.flex-1 .h-screen.flex.justify-center.py-10>div {
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
     height: auto !important;
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
@@ -163,12 +192,24 @@ div[class*="max-w-[45%]"] {
   #root>div>div.flex.h-screen>div.flex-1 .h-screen.flex.justify-center.py-10 div.h-35 {
     height: 80px !important;
   }
+<<<<<<< HEAD
   #root>div>div.flex.h-screen>div.flex-1 .h-screen.flex.justify-center.py-10 div.mt-15 {
     margin-top: 1.5rem !important;
   }
   #root>div>div.flex.h-screen>div.flex-1 .h-screen.flex.justify-center.py-10 div.mt-25 {
     margin-top: 2rem !important;
   }
+=======
+
+  #root>div>div.flex.h-screen>div.flex-1 .h-screen.flex.justify-center.py-10 div.mt-15 {
+    margin-top: 1.5rem !important;
+  }
+
+  #root>div>div.flex.h-screen>div.flex-1 .h-screen.flex.justify-center.py-10 div.mt-25 {
+    margin-top: 2rem !important;
+  }
+
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
   #root>div>div.flex.h-screen>div.flex-1 .h-screen.flex.justify-center.py-10 div.mb-10 {
     margin-bottom: 1rem !important;
   }

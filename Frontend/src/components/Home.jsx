@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 const Home = () => {
 
     const navigate = useNavigate();
+<<<<<<< HEAD
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
 
@@ -62,6 +63,61 @@ const Home = () => {
         </div>
     </div>
   )
+=======
+    const [user, setUser] = useState(null);
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/api/auth/findUser',
+            {
+                withCredentials: true
+            }
+        )
+            .then((res) => {
+                setUser(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+                setUser(null);
+                if (err.response?.status === 401) {
+                    navigate('/login');
+                }
+            });
+    }, []);
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/api/post/allPosts',
+            {
+                withCredentials: true
+            }
+        )
+            .then((res) => {
+                console.log(res.data);
+                setPosts(res.data.posts)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, []);
+
+    console.log(user)
+
+
+    return (
+        <div className="h-full flex flex-col">
+            <div className='py-2 flex justify-center'>
+                <Search />
+            </div>
+            <div className="flex-1 overflow-y-auto hide-scrollbar flex flex-col items-center gap-20 py-5">
+                {
+                    posts.map((post, index) => (
+                        <Feed user={user} index={post._id} key={post._id} post={post} />
+                    ))
+                }
+            </div>
+        </div>
+    )
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
 }
 
 export default Home

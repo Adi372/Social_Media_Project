@@ -7,12 +7,17 @@ import gsap from 'gsap';
 const ChatWindow = () => {
 
   const messagesContainerRef = useRef(null);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
   const [user, setUser] = useState(null);
   const [chat, setChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [myMessage, setMyMessage] = useState('');
   const { id } = useParams();
 
+<<<<<<< HEAD
   function me(){
       axios.get('https://void-tup9.onrender.com/api/auth/findUser',
           {
@@ -55,35 +60,86 @@ const ChatWindow = () => {
     .then((res)=>{
       // console.log(res.data.messages);
       const formatted = res.data.messages.map((msg)=>({
+=======
+  function me() {
+    axios.get('http://localhost:3000/api/auth/findUser',
+      {
+        withCredentials: true
+      }
+    )
+      .then((res) => {
+        setUser(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        setUser(null);
+      });
+  }
+
+  function myChat() {
+    axios.get('http://localhost:3000/api/chat/allChats',
+      {
+        withCredentials: true
+      }
+    )
+      .then((res) => {
+        console.log(res.data);
+        const myChat = res.data.chats.find(chat =>
+          chat._id === id
+        )
+        console.log("my chat:", myChat)
+        setChat(myChat);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
+  function loadMessages(chatId) {
+    axios.post('http://localhost:3000/api/chat/loadMessages',
+      { chatId },
+      { withCredentials: true }
+    )
+      .then((res) => {
+        console.log(res.data.messages);
+        const formatted = res.data.messages.map((msg) => ({
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
           id: msg._id.toString(),
           senderId: msg.sender._id,
-          sender: msg.sender._id.toString() === user._id.toString()? "me":"friend",
+          sender: msg.sender._id.toString() === user._id.toString() ? "me" : "friend",
           message: msg.text,
           senderPic: msg.sender.profilePic
         }));
         setMessages(formatted);
+<<<<<<< HEAD
     })
     .catch((err)=>{
       // console.log(err);
     })
+=======
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
   }
 
-  useEffect(()=>{
-      me();
+  useEffect(() => {
+    me();
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     myChat();
   }, [id]);
 
-  useEffect(()=>{
-    if(user){
+  useEffect(() => {
+    if (user) {
       loadMessages(id);
     }
   }, [user, id]);
 
   useEffect(() => {
-  if (!id) return;
+    if (!id) return;
 
     const joinRoom = () => {
       socket.emit("join-chat", id);
@@ -149,6 +205,10 @@ const ChatWindow = () => {
     });
   }, [messages]);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2c80c17 (Update AI chat and frontend components)
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!myMessage.trim() || !chat) return;   // don't send if chat not loaded
@@ -165,34 +225,34 @@ const ChatWindow = () => {
     <div className='h-full w-full flex flex-col'>
       <div className=' w-full h-[12%] flex items-center px-5 gap-4'>
         <Link to={`/userProfile/${chat?.friendId}`} className=" h-10 w-10 rounded-full overflow-hidden cursor-pointer">
-            {!chat?.friendPic ? (
+          {!chat?.friendPic ? (
             <div className="text-white h-full w-full flex items-center justify-center text-2xl">
-                <i className="ri-user-line"></i>
+              <i className="ri-user-line"></i>
             </div>
-            ) : (
+          ) : (
             <div className="h-full w-full rounded-full flex items-center justify-center overflow-hidden text-xl">
-                <img
-                    src={chat.friendPic}
-                    alt="Profile Preview"
-                    className="h-full w-full object-cover"
-                />
+              <img
+                src={chat.friendPic}
+                alt="Profile Preview"
+                className="h-full w-full object-cover"
+              />
             </div>
-            )}
+          )}
         </Link>
         <Link to={`/userProfile/${chat?.friendId}`} className='text-white flex flex-col justify-center'>
-            <h1 className='font-semibold text-lg'>{chat?.friendFullName?.firstName} {chat?.friendFullName?.lastName}</h1>
-            <h1 className='text-sm'>{chat?.friendUsername}</h1>
+          <h1 className='font-semibold text-lg'>{chat?.friendFullName?.firstName} {chat?.friendFullName?.lastName}</h1>
+          <h1 className='text-sm'>{chat?.friendUsername}</h1>
         </Link>
       </div>
 
       <div ref={messagesContainerRef} className='border-y-2 text-white border-[#373A43] h-[76%] flex flex-col px-5 py-5 overflow-y-auto hide-scrollbar gap-5'>
 
         {
-          messages.map((msg)=>{
+          messages.map((msg) => {
             console.log(msg)
             return (
-            <div key={msg.id} className={`flex gap-3 items-center w-fit max-w-[93%] break-all ${msg.sender === 'me'?'self-end flex-row-reverse':''}`}>
-              {/* <Link to={`/userProfile/${msg?.senderId}`} className=" h-10 w-10 rounded-full overflow-hidden cursor-pointer">
+              <div key={msg.id} className={`flex gap-3 items-center w-fit max-w-[93%] break-all ${msg.sender === 'me' ? 'self-end flex-row-reverse' : ''}`}>
+                {/* <Link to={`/userProfile/${msg?.senderId}`} className=" h-10 w-10 rounded-full overflow-hidden cursor-pointer">
                   {!msg?.senderPic ? (
                   <div className=" h-full w-full flex items-center justify-center text-2xl">
                       <i className="ri-user-line"></i>
@@ -207,16 +267,17 @@ const ChatWindow = () => {
                   </div>
                   )}
               </Link> */}
-              <div className={` ${msg.sender === 'me'?'bg-[#181A20]':'bg-[#1F2128]'} px-3 py-2 rounded-md h-fit w-fit`}>
-                {msg.message}
+                <div className={` ${msg.sender === 'me' ? 'bg-[#181A20]' : 'bg-[#1F2128]'} px-3 py-2 rounded-md h-fit w-fit`}>
+                  {msg.message}
+                </div>
               </div>
-            </div>
-          )})
+            )
+          })
         }
       </div>
 
       <form onSubmit={handleSubmit} className=' h-[12%] flex items-center px-5 gap-2'>
-        <input value={myMessage} onChange={(e)=>setMyMessage(e.target.value)} className='bg-[#181A20] focus:outline-none text-white placeholder:text-[#808191] rounded w-[93%] h-12 py-2 px-3' placeholder='Message...' type="text" />
+        <input value={myMessage} onChange={(e) => setMyMessage(e.target.value)} className='bg-[#181A20] focus:outline-none text-white placeholder:text-[#808191] rounded w-[93%] h-12 py-2 px-3' placeholder='Message...' type="text" />
         <button type='submit' className='text-[#808191] hover:text-white flex items-center h-12 text-2xl w-[7%] rounded justify-center'><i class="ri-send-plane-2-line"></i></button>
       </form>
     </div>
